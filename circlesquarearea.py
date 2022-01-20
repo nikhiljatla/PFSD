@@ -1,10 +1,11 @@
-from Area.circle import circlearea
-from Area.square import squarearea
+from circle import circlearea
+from square import squarearea
 
 class Mainclass(circlearea,squarearea):
     def __init__(self):
         super().sarea(int(input("Square:")))
         super().carea(int(input("Circle:")))
+        print("Cloned from git")
     def cm(self):
         print("This Is MainClass")
 
