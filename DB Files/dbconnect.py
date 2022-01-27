@@ -16,5 +16,19 @@ document = {"Name": "Nikhil", "Roll No": 1,"Branch":"CSE"}
 obj1.insert_one(document)
 print(c1.database_name)
 print("Inserted Data - 1 Successfully")
-document = { "Name": "Jatla Nikhil", "Roll No": 1141, "Branch":"CSE"}
-obj1.insert_one(document)
+document1 = [{ "Name": "Jatla Nikhil", "Roll No": 1141, "Branch":"CSE"},
+             { "Name": "Hello", "Roll No": 10, "Branch":"CSE"}]
+obj1.insert_many(document1)
+print("Many Documents Inserted Successfully")
+
+query={"Name":"Jatla Nikhil"}
+print(obj1.find_one(query))
+
+query={"Branch":"CSE"}
+result=obj1.find(query)
+for i in result:
+    print(i)
+    #deleting single documents from collection
+query ={"Rool No":10}
+obj1.delete_one(query)
+print("Delete Done")
