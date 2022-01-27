@@ -6,3 +6,4 @@ def func(x):
 @pytest.mark.Nikhil
 def test_answer():
     assert func(3)==10
+    
